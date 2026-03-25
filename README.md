@@ -18,7 +18,7 @@ Add to your LazyVim plugin specs (e.g., `~/.config/nvim/lua/plugins/code-review.
 ```lua
 return {
   {
-    "asadehaan/code-review.nvim",
+    "okazagi/code-review.nvim",
     cmd = { "CodeReviewOpen", "CodeReviewClose", "CodeReviewLink", "CodeReviewGoto", "CodeReviewList" },
     keys = {
       { "<leader>co", desc = "Code Review: Open" },
