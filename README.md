@@ -25,10 +25,9 @@ Install with any Neovim plugin manager, then call `setup()`.
 require("code-review").setup()
 ```
 
-**Manual:** Clone or copy this repo into your Neovim packages directory:
-```sh
-git clone https://github.com/okazagi/code-review.nvim \
-  ~/.local/share/nvim/site/pack/plugins/start/code-review.nvim
+**Manual:**
+```
+git clone https://github.com/okazagi/code-review.nvim
 ```
 
 ## Usage
