@@ -148,7 +148,7 @@ function M.open()
     local header = {
       "# Code Review: " .. fname,
       "",
-      "<!-- Use <leader>cl to link a note to a source line -->",
+      "<!-- Use <leader>Nl to link a note to a source line -->",
       "<!-- Tags look like [L42] and connect to line 42 -->",
       "",
     }
@@ -207,7 +207,7 @@ function M.open()
 
   -- Focus the notes window for writing
   vim.api.nvim_set_current_win(notes_win)
-  vim.notify("Code review started. <leader>cl to link a note to a line.", vim.log.levels.INFO)
+  vim.notify("Code review started. <leader>Nl to link a note to a line.", vim.log.levels.INFO)
 end
 
 --- Close the review session and save notes.
@@ -306,12 +306,12 @@ function M.setup(opts)
   vim.api.nvim_create_user_command("CodeReviewGoto", M.goto_source, { desc = "Jump to source from note tag" })
   vim.api.nvim_create_user_command("CodeReviewList", M.list_notes, { desc = "List all notes in quickfix" })
 
-  -- Default keymaps (<leader>r for "review", avoids LazyVim's <leader>c group)
-  vim.keymap.set("n", "<leader>ro", M.open, { desc = "Code Review: Open" })
-  vim.keymap.set("n", "<leader>rc", M.close, { desc = "Code Review: Close" })
-  vim.keymap.set("n", "<leader>rl", M.link_line, { desc = "Code Review: Link line" })
-  vim.keymap.set("n", "<leader>rg", M.goto_source, { desc = "Code Review: Goto source" })
-  vim.keymap.set("n", "<leader>rn", M.list_notes, { desc = "Code Review: List notes" })
+  -- Default keymaps (<leader>N for "Notes", avoids LazyVim conflicts)
+  vim.keymap.set("n", "<leader>No", M.open, { desc = "Code Review: Open" })
+  vim.keymap.set("n", "<leader>Nc", M.close, { desc = "Code Review: Close" })
+  vim.keymap.set("n", "<leader>Nl", M.link_line, { desc = "Code Review: Link line" })
+  vim.keymap.set("n", "<leader>Ng", M.goto_source, { desc = "Code Review: Goto source" })
+  vim.keymap.set("n", "<leader>Nn", M.list_notes, { desc = "Code Review: List notes" })
 end
 
 return M

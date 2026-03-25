@@ -33,12 +33,12 @@ git clone https://github.com/okazagi/code-review.nvim
 ## Usage
 
 1. Open a file you want to review
-2. `<leader>ro` — opens the review split (notes on the right)
-3. `<leader>rl` — inserts a `[L<n>]` tag linking to the current source line, with a code preview
+2. `<leader>No` — opens the review split (notes on the right)
+3. `<leader>Nl` — inserts a `[L<n>]` tag linking to the current source line, with a code preview
 4. Write your notes below the tag
-5. `<leader>rg` — jump from a tag in notes back to the source line
-6. `<leader>rn` — show all linked notes in the quickfix list
-7. `<leader>rc` — close the review session (notes auto-save)
+5. `<leader>Ng` — jump from a tag in notes back to the source line
+6. `<leader>Nn` — show all linked notes in the quickfix list
+7. `<leader>Nc` — close the review session (notes auto-save)
 
 ## Note Format
 
