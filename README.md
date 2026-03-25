@@ -1,5 +1,7 @@
 # code-review.nvim
 
+Struggling with default key commands.
+
 A Neovim plugin for reviewing code with linked notes. Split your window with code on the left and a markdown notes buffer on the right, where each note is linked to a specific source line. I just whipped this up with Claude-CLI, so, use at your own risk but it should be good to go. I've never made a plugin before so I'm not sure about the install process, claude wrote the README as well. I'm using it and it's pretty simple and what I need at the moment.
 
 ## Features
