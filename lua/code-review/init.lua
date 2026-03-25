@@ -306,12 +306,12 @@ function M.setup(opts)
   vim.api.nvim_create_user_command("CodeReviewGoto", M.goto_source, { desc = "Jump to source from note tag" })
   vim.api.nvim_create_user_command("CodeReviewList", M.list_notes, { desc = "List all notes in quickfix" })
 
-  -- Default keymaps
-  vim.keymap.set("n", "<leader>co", M.open, { desc = "Code Review: Open" })
-  vim.keymap.set("n", "<leader>cc", M.close, { desc = "Code Review: Close" })
-  vim.keymap.set("n", "<leader>cl", M.link_line, { desc = "Code Review: Link line" })
-  vim.keymap.set("n", "<leader>cg", M.goto_source, { desc = "Code Review: Goto source" })
-  vim.keymap.set("n", "<leader>cn", M.list_notes, { desc = "Code Review: List notes" })
+  -- Default keymaps (<leader>r for "review", avoids LazyVim's <leader>c group)
+  vim.keymap.set("n", "<leader>ro", M.open, { desc = "Code Review: Open" })
+  vim.keymap.set("n", "<leader>rc", M.close, { desc = "Code Review: Close" })
+  vim.keymap.set("n", "<leader>rl", M.link_line, { desc = "Code Review: Link line" })
+  vim.keymap.set("n", "<leader>rg", M.goto_source, { desc = "Code Review: Goto source" })
+  vim.keymap.set("n", "<leader>rn", M.list_notes, { desc = "Code Review: List notes" })
 end
 
 return M
