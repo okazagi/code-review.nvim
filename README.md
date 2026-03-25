@@ -33,12 +33,12 @@ git clone https://github.com/okazagi/code-review.nvim
 ## Usage
 
 1. Open a file you want to review
-2. `<leader>No` — opens the review split (notes on the right)
-3. `<leader>Nl` — inserts a `[L<n>]` tag linking to the current source line, with a code preview
+2. `<leader>nRo` — opens the review split (notes on the right)
+3. `<leader>nRl` — inserts a `[L<n>]` tag linking to the current source line, with a code preview
 4. Write your notes below the tag
-5. `<leader>Ng` — jump from a tag in notes back to the source line
-6. `<leader>Nn` — show all linked notes in the quickfix list
-7. `<leader>Nc` — close the review session (notes auto-save)
+5. `<leader>nRg` — jump from a tag in notes back to the source line
+6. `<leader>nRn` — show all linked notes in the quickfix list
+7. `<leader>nRc` — close the review session (notes auto-save)
 
 ## Note Format
 
@@ -59,6 +59,7 @@ require("code-review").setup({
   sign_text = ">>",        -- gutter sign text
   sign_hl = "DiagnosticInfo", -- sign highlight group
   note_width = 0.4,        -- notes panel width (fraction of screen)
+  prefix = "<leader>nR",   -- keymap prefix (change to your preference)
 })
 ```
 
