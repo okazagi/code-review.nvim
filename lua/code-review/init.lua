@@ -55,23 +55,22 @@ local function refresh_signs(source_buf, notes_buf)
 end
 
 --- Jump the source window to the line referenced by the current notes line.
+--- Only syncs when the cursor is directly on a [L<n>] tag line.
 local function sync_cursor_to_source()
   local tab = vim.api.nvim_get_current_tabpage()
   local s = state[tab]
   if not s then return end
 
   local row = vim.api.nvim_win_get_cursor(0)[1]
-  -- Walk upward from current line to find nearest [L<n>] tag
-  local lines = vim.api.nvim_buf_get_lines(s.notes_buf, 0, row, false)
-  for i = #lines, 1, -1 do
-    local ln = lines[i]:match("^%[L(%d+)%]")
-    if ln then
-      local target = tonumber(ln)
-      local line_count = vim.api.nvim_buf_line_count(s.source_buf)
-      if target >= 1 and target <= line_count then
-        vim.api.nvim_win_set_cursor(s.source_win, { target, 0 })
-      end
-      return
+  local line = vim.api.nvim_buf_get_lines(s.notes_buf, row - 1, row, false)[1]
+  if not line then return end
+
+  local ln = line:match("^%[L(%d+)%]")
+  if ln then
+    local target = tonumber(ln)
+    local line_count = vim.api.nvim_buf_line_count(s.source_buf)
+    if target >= 1 and target <= line_count then
+      vim.api.nvim_win_set_cursor(s.source_win, { target, 0 })
     end
   end
 end
