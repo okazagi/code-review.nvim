@@ -11,44 +11,24 @@ A Neovim plugin for reviewing code with linked notes. Split your window with cod
 - Notes persist to disk per file
 - Quickfix list of all notes for easy navigation
 
-## Installation (LazyVim)
+## Installation
 
-Add to your LazyVim plugin specs (e.g., `~/.config/nvim/lua/plugins/code-review.lua`):
+Install with any Neovim plugin manager, then call `setup()`.
 
+**lazy.nvim:**
 ```lua
-return {
-  {
-    "okazagi/code-review.nvim",
-    cmd = { "CodeReviewOpen", "CodeReviewClose", "CodeReviewLink", "CodeReviewGoto", "CodeReviewList" },
-    keys = {
-      { "<leader>co", desc = "Code Review: Open" },
-      { "<leader>cc", desc = "Code Review: Close" },
-      { "<leader>cl", desc = "Code Review: Link line" },
-      { "<leader>cg", desc = "Code Review: Goto source" },
-      { "<leader>cn", desc = "Code Review: List notes" },
-    },
-    opts = {},
-  },
-}
+{ "okazagi/code-review.nvim", opts = {} }
 ```
 
-For local development, point to the local path instead:
-
+**Any other plugin manager:**
 ```lua
-return {
-  {
-    dir = "~/project-hub/vimcode-review",
-    cmd = { "CodeReviewOpen", "CodeReviewClose", "CodeReviewLink", "CodeReviewGoto", "CodeReviewList" },
-    keys = {
-      { "<leader>co", desc = "Code Review: Open" },
-      { "<leader>cc", desc = "Code Review: Close" },
-      { "<leader>cl", desc = "Code Review: Link line" },
-      { "<leader>cg", desc = "Code Review: Goto source" },
-      { "<leader>cn", desc = "Code Review: List notes" },
-    },
-    opts = {},
-  },
-}
+require("code-review").setup()
+```
+
+**Manual:** Clone or copy this repo into your Neovim packages directory:
+```sh
+git clone https://github.com/okazagi/code-review.nvim \
+  ~/.local/share/nvim/site/pack/plugins/start/code-review.nvim
 ```
 
 ## Usage
